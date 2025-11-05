@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aravind Music Player</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- === Splash Screen === -->
+  <div id="splash">
+    <div class="logo">
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+    </div>
+    <h1>Keerthana's Spotify</h1>
+  </div>
+
+  <!-- === Main App === -->
+  <div class="app">
+    <!-- Top Buttons -->
+    <div class="top-btns" id="topBtns">
+      <button id="muteBtn" class="top-btn"><i id="muteIcon" class="fa-solid fa-volume-high"></i></button>
+      <button id="favBtn" class="top-btn"><i id="favMainIcon" class="fa-solid fa-heart"></i></button>
+    </div>
+
+    <!-- HOME -->
+    <section id="home" class="screen active">
+      <div class="center">
+        <img id="cover" class="cover" src="select.jpg" alt="">
+        <div class="meta">
+          <h3 id="title">Please select a song from playlist</h3>
+          <p id="artist"></p>
+        </div>
+
+        <div class="time-row"><div id="current-time">0:00</div><div id="total-time">0:00</div></div>
+        <div class="progress" id="progress"><div class="bar" id="bar"></div></div>
+
+        <div class="controls">
+          <button id="prev" class="control-btn"><i class="fa-solid fa-backward-step"></i></button>
+          <button id="play" class="control-btn large"><i id="play-icon" class="fa-solid fa-play"></i></button>
+          <button id="next" class="control-btn"><i class="fa-solid fa-forward-step"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLAYLIST -->
+    <section id="playlistScreen" class="screen">
+      <div class="section-title">All Songs (<span id="allCount">0</span>)</div>
+      <div id="playlist" class="list"></div>
+    </section>
+
+    <!-- FAVOURITES -->
+    <section id="favScreen" class="screen">
+      <div class="section-title">Favourite Songs (<span id="favCount">0</span>)</div>
+      <div id="favList" class="list"></div>
+    </section>
+
+<!-- SEARCH -->
+<section id="searchScreen" class="screen">
+  <div class="section-title">Search Songs</div>
+
+  <!-- Search Container -->
+  <div class="search-bar">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input id="searchInput" type="text" placeholder="Search your favourite tracks..." />
+    <i id="clearSearch" class="fa-solid fa-xmark clear-btn" title="Clear Search"></i>
+  </div>
+
+  <div id="searchHistory" class="history"></div>
+  <div id="searchResults" class="list"></div>
+</section>
+
+
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+      <div class="nav-item active" data-target="home"><i class="fa-solid fa-house"></i><span>Home</span></div>
+      <div class="nav-item" data-target="playlistScreen"><i class="fa-solid fa-music"></i><span>Playlist</span></div>
+      <div class="nav-item" data-target="favScreen"><i class="fa-solid fa-heart"></i><span>Favs</span></div>
+      <div class="nav-item" data-target="searchScreen"><i class="fa-solid fa-magnifying-glass"></i><span>Search</span></div>
+    </nav>
+  </div>
+
+  <!-- Toast element -->
+  <div id="toast" class="toast">
+    <div id="toast-text">Select a song from Playlist to play</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
